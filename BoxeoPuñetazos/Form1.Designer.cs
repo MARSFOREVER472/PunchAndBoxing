@@ -45,6 +45,7 @@
             energiaCPU.Name = "energiaCPU";
             energiaCPU.Size = new Size(275, 34);
             energiaCPU.TabIndex = 0;
+            energiaCPU.Value = 100;
             // 
             // energiaJugador
             // 
@@ -52,6 +53,7 @@
             energiaJugador.Name = "energiaJugador";
             energiaJugador.Size = new Size(275, 34);
             energiaJugador.TabIndex = 1;
+            energiaJugador.Value = 100;
             // 
             // padalustro
             // 

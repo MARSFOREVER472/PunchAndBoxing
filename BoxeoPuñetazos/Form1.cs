@@ -11,8 +11,8 @@ namespace BoxeoPuñetazos
         Random rnd = new Random(); // VARIABLE ALEATORIA.
         int velocidadEnemigo = 5; // LA VELOCIDAD DEL ENEMIGO SE ACELERARÁ 5 VECES.
         int index = 0; // ÍNDICE INICIAL DEL JUEGO POR DEFECTO.
-        int saludEnemigo = 275; // SALUD DEL ENEMIGO.
-        int saludJugador = 275; // SALUD DEL JUGADOR.
+        int saludEnemigo = 100; // SALUD DEL ENEMIGO.
+        int saludJugador = 100; // SALUD DEL JUGADOR.
         List<string> ataqueEnemigo = new List<string> { "izquierda", "derecha", "bloqueo" }; // TIENE QUE DEPENDER DE LOS ATAQUES EN QUE EL ENEMIGO PUEDE EFECTUARSE AUTOMÁTICAMENTE.
 
         public Form1()
@@ -24,7 +24,44 @@ namespace BoxeoPuñetazos
         {
             // ESTE ES UN EVENTO PARA EL ATAQUE DE UN BOXEADOR CUALQUIERA.
 
-            // EN INSTANTES...
+            // PARA QUE UN BOXEADOR CUALQUIERA PUEDA ATACAR HACIA LA IZQUIERDA, HACIA LA DERECHA, O BLOQUEA COMO UN ESCUDO PROTECTOR, USAREMOS LA ITERACIÓN "switch".
+
+            index = rnd.Next(0, ataqueEnemigo.Count); // EL CONTEO DE ATAQUES DEL ENEMIGO HACIA EL JUGADOR PUEDE VARIAR.
+
+            // PROCEDEREMOS A LOS ATAQUES DEL ENEMIGO HACIA EL JUGADOR.
+
+            switch (ataqueEnemigo[index].ToString())
+            {
+                case "izquierda": // EN CASO DE QUE EL ENEMIGO PUEDA ATACAR AL JUGADOR HACIA LA IZQUIERDA.
+                    mikeTyson.Image = Properties.Resources.enemy_punch1; // EL ENEMIGO ATACA HACIA LA IZQUIERDA.
+                    bloqueoEnemigo = false; // POR EL MOMENTO ESTE ENEMIGO NO BLOQUEA, SINO QUE GENERA ATAQUES AL JUGADOR.
+
+                    // EL ENEMIGO DETECTA AL JUGADOR MIENTRAS ATACA HACIA LA IZQUIERDA Y DISMINUYE LA BARRA DE ENERGÍA EN 5.
+
+                    if (mikeTyson.Bounds.IntersectsWith(padalustro.Bounds) && bloqueoJugador == false)
+                    {
+                        saludJugador -= 5;
+                    }
+                    break;
+
+                case "derecha": // EN CASO DE QUE EL ENEMIGO PUEDA ATACAR AL JUGADOR HACIA LA DERECHA.
+                    mikeTyson.Image = Properties.Resources.enemy_punch2; // EL ENEMIGO ATACA HACIA LA DERECHA.
+                    bloqueoEnemigo = false; // POR EL MOMENTO ESTE ENEMIGO NO BLOQUEA, SINO QUE GENERA ATAQUES AL JUGADOR.
+
+                    // EL ENEMIGO DETECTA AL JUGADOR MIENTRAS ATACA HACIA LA DERECHA Y DISMINUYE LA BARRA DE ENERGÍA EN 5.
+
+                    if (mikeTyson.Bounds.IntersectsWith(padalustro.Bounds) && bloqueoJugador == false)
+                    {
+                        saludJugador -= 5;
+                    }
+                    break;
+
+                case "bloqueo": // SI EL ENEMIGO BLOQUEA AL JUGADOR ENTONCES SE ACTIVARÁ EL PODER DE BLOQUEO.
+                    mikeTyson.Image = Properties.Resources.enemy_block; // EL ENEMIGO SE BLOQUEA DE LOS ATAQUES DEL JUGADOR.
+                    bloqueoEnemigo = true;
+
+                break;
+            }
         }
 
         private void EventoTemporizadorMovimientoBoxeador(object sender, EventArgs e)
