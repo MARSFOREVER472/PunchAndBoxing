@@ -16,6 +16,6 @@ Objetivos de esta lección:
 
 5.- Uso de cuadros de imágenes y recursos para mostrar imágenes dinámicas para el jugador y el oponente.
 
-6.- Determinar quién ganó la ronda y quién la perdió usando números enteros vinculados a las barras de progreso.
+6.- Determinar quién ganó la ronda y quién la perdió usando números enteros vinculados a las barras de salud.
 
-7.- Uso de eventos Key Down y Key Up para controlar el reproductor.
+7.- Uso de eventos Key Down y Key Up para controlar el juego.
