@@ -8,8 +8,8 @@ Objetivos de esta lección:
 
 1.- Cree un juego de perforación simple en Visual Studio usando el lenguaje de programación C#
 2.- Usar barras de progreso para mostrar la salud del jugador y el oponente.
-3.- Uso de la selección para determinar la prueba de impacto entre jugador y oponente
-4.- Usar LIST para crear una variedad de movimientos para el oponente controlado por la CPU
-5.- Uso de cuadros de imágenes y recursos para mostrar imágenes dinámicas para el jugador y el oponente
-6.- Determinar quién ganó la ronda y quién la perdió usando números enteros vinculados a las barras de progreso
-7.- Uso de eventos Key Down y Key Up para controlar el reproductor
+3.- Uso de la selección para determinar la prueba de impacto entre jugador y oponente.
+4.- Usar LIST para crear una variedad de movimientos para el oponente controlado por la CPU.
+5.- Uso de cuadros de imágenes y recursos para mostrar imágenes dinámicas para el jugador y el oponente.
+6.- Determinar quién ganó la ronda y quién la perdió usando números enteros vinculados a las barras de progreso.
+7.- Uso de eventos Key Down y Key Up para controlar el reproductor.
