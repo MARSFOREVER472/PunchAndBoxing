@@ -6,7 +6,7 @@
 
 Objetivos de esta lección:
 
-1.- Cree un juego de perforación simple en Visual Studio usando el lenguaje de programación C#.
+1.- Crear un juego de golpe simple en Visual Studio usando el lenguaje de programación C#.
 
 2.- Usar barras de progreso para mostrar la salud del jugador y el oponente.
 
