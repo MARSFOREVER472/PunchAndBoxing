@@ -125,7 +125,43 @@ namespace BoxeoPuñetazos
         {
             // EVENTO EN CUANDO EL JUGADOR (Padalustro) PRESIONE CUALQUIER TECLA AL JUGAR.
 
-            // EN INSTANTES...
+            // SI EL JUGADOR PRESIONA LA TECLA IZQUIERDA DEL TECLADO...
+
+            if (e.KeyCode == Keys.Left)
+            {
+                padalustro.Image = Properties.Resources.boxer_left_punch; // EL JUGADOR GOLPEA HACIA LA IZQUIERDA.
+                bloqueoJugador = false; // EL JUGADOR NO BLOQUEA MIENTRAS REALIZA ESTA ACCIÓN.
+
+                // AL MOMENTO DE QUE EL JUGADOR REALICE ESTA ACCIÓN, SE DETECTA MEDIANTE LÍMITES DE COLISIÓN HACIA AL ENEMIGO (mikeTyson).
+
+                if (padalustro.Bounds.IntersectsWith(mikeTyson.Bounds) && bloqueoEnemigo == false)
+                {
+                    saludEnemigo -= 5; // LA SALUD DEL ENEMIGO RESTA A -5.
+                }
+            }
+
+            // SI EL JUGADOR PRESIONA LA TECLA DERECHA DEL TECLADO...
+
+            if (e.KeyCode == Keys.Right)
+            {
+                padalustro.Image = Properties.Resources.boxer_right_punch; // EL JUGADOR GOLPEA HACIA LA DERECHA.
+                bloqueoJugador = false; // EL JUGADOR NO BLOQUEA MIENTRAS REALIZA ESTA ACCIÓN.
+
+                // AL MOMENTO DE QUE EL JUGADOR REALICE ESTA ACCIÓN, SE DETECTA MEDIANTE LÍMITES DE COLISIÓN HACIA AL ENEMIGO (mikeTyson).
+
+                if (padalustro.Bounds.IntersectsWith(mikeTyson.Bounds) && bloqueoEnemigo == false)
+                {
+                    saludEnemigo -= 5; // LA SALUD DEL ENEMIGO RESTA A -5.
+                }
+            }
+
+            // SIN EMBARGO, SI SE PRESIONA LA TECLA DE ABAJO, SE UTILIZARÁ UN ESCUDO PROTECTOR CUANDO SE BLOQUEA Y PROTEGE DE LOS ATAQUES DEL ENEMIGO.
+
+            if (e.KeyCode == Keys.Down)
+            {
+                padalustro.Image = Properties.Resources.boxer_block; // EL JUGADOR BLOQUEA DE LOS GOLPES DEL ENEMIGO.
+                bloqueoJugador = true; // EN ESTA ACCIÓN SÍ PERMITE PROTEGERTE DE LOS ATAQUES DEL ENEMIGO.
+            }
         }
 
         private void KeyIsUp(object sender, KeyEventArgs e)
