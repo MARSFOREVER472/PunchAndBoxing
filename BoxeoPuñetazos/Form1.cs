@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Media;
 
 namespace BoxeoPuñetazos
 {
@@ -168,7 +169,10 @@ namespace BoxeoPuñetazos
         {
             // EVENTO EN CUANDO EL JUGADOR (Padalustro) SUELTA CUALQUIER TECLA AL JUGAR.
 
-            // EN INSTANTES...
+            // ES SÚPER CORTITO CUANDO DEJA DE EFECTUAR MOVIMIENTOS EL JUGADOR.
+
+            padalustro.Image = Properties.Resources.boxer_stand; // SE MANTIENE EN ESA POSICIÓN.
+            bloqueoJugador = false; // NO BLOQUEA DE LOS ATAQUES DEL ENEMIGO.
         }
 
         private void ReiniciarJuego()
