@@ -179,7 +179,14 @@ namespace BoxeoPuñetazos
         {
             // EVENTO PARA QUE EL JUGADOR REINICIE UNA PARTIDA.
 
-            // EN INSTANTES...
+            // HACEMOS UN LLAMADO A LOS TEMPORIZADORES DE JUEGO DECLARADOS ANTERIORMENTE PARA SU EJECUCIÓN.
+
+            ataqueBoxeador.Start(); // TEMPORIZADOR PARA LOS ATAQUES.
+            movimientoBoxeador.Start(); // TEMPORIZADOR PARA LOS MOVIMIENTOS DE UN BOXEADOR.
+            saludJugador = 100; // LA SALUD DEL JUGADOR INICIALIZA EN 100 FRAMES.
+            saludEnemigo = 100; // LA SALUD DEL ENEMIGO INICIALIZA EN 100 FRAMES.
+
+            mikeTyson.Left = 400; // POSICIÓN HORIZONTAL DONDE SE INICIALIZA EL ENEMIGO.
         }
     }
 }
